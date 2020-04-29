@@ -13,8 +13,6 @@ app.set("view engine", "ejs");
 
 // Style and script
 app.use("/static", express.static(__dirname + "/public"));
-app.use("/bootstrap", express.static(__dirname + "/public/vendors/bootstrap"));
-app.use("/fontawesome", express.static(__dirname + "/public/vendors/fontawesome"));
 
 var controllers = require(__dirname + "/apps/controllers");
 
