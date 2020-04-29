@@ -1,6 +1,6 @@
-var express = require("express");
-var config = require("config");
-var bodyParser = require("body-parser");
+const express = require("express");
+const config = require("config");
+const bodyParser = require("body-parser");
 
 var app = express();
 
@@ -14,7 +14,7 @@ app.set("view engine", "ejs");
 // Style and script
 app.use("/static", express.static(__dirname + "/public"));
 
-var controllers = require(__dirname + "/apps/controllers");
+const controllers = require(__dirname + "/apps/controllers");
 
 app.use(controllers);
 
