@@ -1,6 +1,7 @@
 const express = require("express");
 const config = require("config");
 const bodyParser = require("body-parser");
+const expressLayouts = require('express-ejs-layouts');
 
 var app = express();
 
@@ -10,6 +11,8 @@ app.use(bodyParser.urlencoded({encoded: true}));
 
 app.set("views", __dirname + "/apps/views");
 app.set("view engine", "ejs");
+app.use(expressLayouts);
+app.set('layout', 'layout');
 
 // Style and script
 app.use("/static", express.static(__dirname + "/public"));

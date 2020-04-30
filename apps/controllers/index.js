@@ -13,8 +13,5 @@ router.get("/admin", (req, res) => {
     res.render("admin");
 });
 
-router.get("/register", (req, res) => {
-    res.render("register");
-});
 
 module.exports = router;
