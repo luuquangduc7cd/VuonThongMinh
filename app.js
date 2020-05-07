@@ -2,12 +2,23 @@ const express = require("express");
 const config = require("config");
 const bodyParser = require("body-parser");
 const expressLayouts = require('express-ejs-layouts');
+const session = require("express-session");
 
 var app = express();
 
 //Body parser
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({encoded: true}));
+
+
+// Configure trust proxy
+app.set("trust proxy", 1);
+app.use(session({
+    secret: config.get("secret_key"),
+    resave: false,
+    saveUninitialized: true,
+    cookie: {secure: true}
+}));
 
 app.set("views", __dirname + "/apps/views");
 app.set("view engine", "ejs");

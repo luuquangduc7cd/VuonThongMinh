@@ -8,6 +8,8 @@
         "port": 3306,
         "dbName": "khoaluan",
         "dbUser": "admin",
-        "dbPassword": "khoaluanpwd"
-    }
+        "dbPassword": "KhoaLuan@2020"
+    },
+    "salt": 10,
+    "secret_key": "S3cr3tK3y"
 }
