@@ -42,9 +42,12 @@ router.post("/login", (req, res) => {
             }
             else {
                 localData.error = "Tài khoản hoặc mật khẩu không chính xác";
-                res.render("login", localData);
+                res.render("login", {localData});
             }
-        });
+        }).catch((err) => {
+            localData.error = "Tài khoản không tồn tại";
+            res.render("login", { localData });
+        })
     }
     else {
         localData.error = "Tài khoản không tồn tại";
